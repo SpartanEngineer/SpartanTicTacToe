@@ -304,8 +304,7 @@ def openWebsite(event):
 root = Tk()
 Grid.rowconfigure(root, 0, weight=1)
 Grid.columnconfigure(root, 0, weight=1)
-root.minsize(width=600, height=600)
-root.maxsize(width=600, height=600)
+root.minsize(width=700, height=700)
 root.wm_title("SpartanTicTacToe")
 
 spartanImage = ImageTk.PhotoImage(file='../resources/spartan-icon-small.png')
@@ -348,12 +347,13 @@ winnerLabel.grid(row=3, column=2, sticky=N+S+W+E)
 spartanFrame = Frame(frame)
 spartanFrame.grid(columnspan=3, row=4, column=0)
 
-spartanLabel = Label(spartanFrame, image=spartanImage)
+spartanLabel = Label(spartanFrame, image=spartanImage, cursor='hand2')
 spartanLabel.pack()
 
 spartanTextLink = Label(spartanFrame, text='www.spartanengineer.com', fg='blue',
         cursor='hand2')
 spartanTextLink.bind("<Button-1>", openWebsite)
+spartanLabel.bind("<Button-1>", openWebsite)
 spartanTextLink.pack()
 
 for r in range(5):
