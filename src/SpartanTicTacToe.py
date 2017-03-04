@@ -1,6 +1,7 @@
 import copy, random, tkFont, time
 from Tkinter import *
 from functools import partial
+from PIL import ImageTk
  
 #-------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------
@@ -12,6 +13,7 @@ from functools import partial
 #   GUI.
 #-------------------------------------------------------------------------------------
 #Run via Python 2.7
+#REQUIRES: pillow (python imaging library)
 #-------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------
@@ -32,6 +34,12 @@ from functools import partial
 #   0 == empty space
 #   1 == x space
 #   2 == o space
+
+print('----------------------------------------------------')
+print('----------------------------------------------------')
+print('https://www.spartanengineer.com')
+print('----------------------------------------------------')
+print('----------------------------------------------------')
 
 learnConstant = 0.1 # learning constant
 
@@ -206,7 +214,7 @@ n_features = 6
 oWeights = [initialWeight for i in range(n_features)]
 xWeights = [initialWeight for i in range(n_features)]
 
-trainingIterations = 10000
+trainingIterations = 100
 print("training our tic tac toe AI for %d games (this may take a minute or two...)" % trainingIterations)
 
 for i in range(trainingIterations):
@@ -295,6 +303,9 @@ Grid.columnconfigure(root, 0, weight=1)
 root.minsize(width=600, height=600)
 root.maxsize(width=600, height=600)
 root.wm_title("SpartanTicTacToe")
+
+spartanImage = ImageTk.PhotoImage(file='../resources/spartan-icon.png')
+root.call('wm', 'iconphoto', root._w, spartanImage)
 
 frame = Frame(root)
 frame.grid(row=0, column=0, sticky=N+S+E+W)
