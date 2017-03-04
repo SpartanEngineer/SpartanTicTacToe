@@ -1,4 +1,4 @@
-import copy, random, tkFont, time
+import copy, random, tkFont, time, webbrowser
 from Tkinter import *
 from functools import partial
 from PIL import ImageTk
@@ -295,6 +295,10 @@ def newGameClick():
     if(computerSide == 1):
         makeMove()
 
+#this function loads up the spartan engineer website in a browser
+def openWebsite(event):
+    webbrowser.open_new('http://www.spartanengineer.com')
+
 #the following code sets up the Tkinter GUI for playing against the AI
 
 root = Tk()
@@ -304,7 +308,7 @@ root.minsize(width=600, height=600)
 root.maxsize(width=600, height=600)
 root.wm_title("SpartanTicTacToe")
 
-spartanImage = ImageTk.PhotoImage(file='../resources/spartan-icon.png')
+spartanImage = ImageTk.PhotoImage(file='../resources/spartan-icon-small.png')
 root.call('wm', 'iconphoto', root._w, spartanImage)
 
 frame = Frame(root)
@@ -341,7 +345,18 @@ r2.grid(row=0, column=1, sticky=N+S+E+W)
 winnerLabel = Label(frame, text="new game")
 winnerLabel.grid(row=3, column=2, sticky=N+S+W+E)
 
-for r in range(4):
+spartanFrame = Frame(frame)
+spartanFrame.grid(columnspan=3, row=4, column=0)
+
+spartanLabel = Label(spartanFrame, image=spartanImage)
+spartanLabel.pack()
+
+spartanTextLink = Label(spartanFrame, text='www.spartanengineer.com', fg='blue',
+        cursor='hand2')
+spartanTextLink.bind("<Button-1>", openWebsite)
+spartanTextLink.pack()
+
+for r in range(5):
     Grid.rowconfigure(frame, r, weight=1)
 for c in range(3):
     Grid.columnconfigure(frame, c, weight=1)
