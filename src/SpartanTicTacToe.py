@@ -214,7 +214,7 @@ n_features = 6
 oWeights = [initialWeight for i in range(n_features)]
 xWeights = [initialWeight for i in range(n_features)]
 
-trainingIterations = 100
+trainingIterations = 10000
 print("training our tic tac toe AI for %d games (this may take a minute or two...)" % trainingIterations)
 
 for i in range(trainingIterations):
