@@ -1,4 +1,4 @@
-import copy, random, tkFont, time, webbrowser
+import copy, random, tkFont, time, webbrowser, os
 from Tkinter import *
 from functools import partial
 from PIL import ImageTk
@@ -34,6 +34,8 @@ from PIL import ImageTk
 #   0 == empty space
 #   1 == x space
 #   2 == o space
+
+rootDirectory = os.path.dirname(os.path.realpath(__file__))
 
 print('----------------------------------------------------')
 print('----------------------------------------------------')
@@ -307,7 +309,7 @@ Grid.columnconfigure(root, 0, weight=1)
 root.minsize(width=700, height=700)
 root.wm_title("SpartanTicTacToe")
 
-spartanImage = ImageTk.PhotoImage(file='../resources/spartan-icon-small.png')
+spartanImage = ImageTk.PhotoImage(file=rootDirectory + '/resources/spartan-icon-small.png')
 root.call('wm', 'iconphoto', root._w, spartanImage)
 
 frame = Frame(root)

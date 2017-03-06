@@ -1,0 +1,1 @@
+execfile('src/SpartanTicTacToe.py')

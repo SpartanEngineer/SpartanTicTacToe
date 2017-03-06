@@ -9,4 +9,6 @@ SpartanTicTacToe uses machine learning to train a tic tac toe game AI.  It inclu
 Python 2.7, pillow (https://python-pillow.org/)
 
 #Usage:
-python SpartanTicTacToe.py
+```sh
+python RunSpartanTicTacToe.py
+```
