@@ -12,3 +12,4 @@ Python 2.7, pillow (https://python-pillow.org/)
 ```sh
 python RunSpartanTicTacToe.py
 ```
+NOTE: this command must be run from the SpartanTicTacToe directory
